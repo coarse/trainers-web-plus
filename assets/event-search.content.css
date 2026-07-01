@@ -1,0 +1,89 @@
+.formatAndLeague {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.twp-badge-container {
+  display: inline-flex;
+  gap: 8px;
+  vertical-align: middle;
+}
+
+.twp-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0 11px;
+  border-radius: 4px;
+  line-height: 24px;
+  color: var(--bs-white);
+  transition: all 0.25s ease !important;
+}
+
+a:hover .twp-status-badge {
+  color: var(--bs-gray-200);
+}
+
+.twp-status-badge.twp-entered {
+  background-color: var(--bs-primary);
+}
+
+.twp-status-badge.twp-declined,
+.twp-status-badge.twp-waiting {
+  background-color: var(--bs-gray-dark);
+}
+
+.twp-status-badge.twp-not-registered {
+  background-color: var(--bs-gray);
+}
+
+.twp-status-badge.twp-elected,
+.twp-status-badge.twp-joined {
+  background-color: var(--bs-success);
+}
+
+.eventList a.eventLink li.event {
+  position: relative;
+  transition: all 0.25s ease !important;
+}
+
+.eventList a.eventLink li.event.twp-event-entered {
+  border-left: 5px solid var(--bs-primary) !important;
+  background-color: rgba(46, 125, 50, 0.02) !important;
+  box-shadow: 0 2px 8px rgba(46, 125, 50, 0.08) !important;
+}
+
+.eventList a.eventLink li.event.twp-event-entered:hover {
+  background-color: rgba(46, 125, 50, 0.04) !important;
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.12) !important;
+}
+
+.eventList a.eventLink li.event.twp-event-declined,
+.eventList a.eventLink li.event.twp-event-waiting {
+  border-left: 5px solid var(--bs-gray-dark) !important;
+  background-color: rgba(198, 40, 40, 0.02) !important;
+  box-shadow: 0 2px 8px rgba(198, 40, 40, 0.08) !important;
+}
+
+.eventList a.eventLink li.event.twp-event-declined:hover,
+.eventList a.eventLink li.event.twp-event-waiting:hover {
+  background-color: rgba(198, 40, 40, 0.04) !important;
+  box-shadow: 0 4px 12px rgba(198, 40, 40, 0.12) !important;
+}
+
+.eventList a.eventLink li.event.twp-event-elected,
+.eventList a.eventLink li.event.twp-event-joined {
+  border-left: 5px solid var(--bs-success) !important;
+  background-color: rgba(46, 125, 50, 0.02) !important;
+  box-shadow: 0 2px 8px rgba(46, 125, 50, 0.08) !important;
+}
+
+.eventList a.eventLink li.event.twp-event-elected:hover,
+.eventList a.eventLink li.event.twp-event-joined:hover {
+  background-color: rgba(46, 125, 50, 0.04) !important;
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.12) !important;
+}

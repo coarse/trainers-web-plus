@@ -1,0 +1,25 @@
+.twp-btn-wrapper {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  align-items: center;
+}
+
+.twp-sidebar-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.twp-auto-register {
+  padding: 6px 14px !important;
+  white-space: nowrap;
+  background-color: var(--bs-primary) !important;
+  border-color: var(--bs-primary) !important;
+}
+
+.twp-auto-register:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
