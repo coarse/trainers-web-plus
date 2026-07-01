@@ -13,11 +13,18 @@ export default defineConfig({
   outDir: "build",
   manifest: {
     name: "Trainers Web Plus",
-    description:
-      "Tracks registered Pokémon Trainers Website events and displays status on search pages.",
+    description: "Enhances user experience for Pokémon TCG Asia website.",
     version: pkg.version,
     permissions: ["storage"],
     host_permissions: ["*://asia.pokemon-card.com/*"],
+    browser_specific_settings: {
+      gecko: {
+        id: "trainers-web-plus@peioris.dev",
+        data_collection_permissions: {
+          required: ["none"],
+        },
+      },
+    },
   },
   vite: (ctx) => ({
     define: {
