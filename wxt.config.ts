@@ -13,7 +13,8 @@ export default defineConfig({
   outDir: "build",
   manifest: {
     name: "Trainers Web Plus",
-    description: "Enhances user experience for Pokémon TCG Asia website.",
+    description:
+      "Trainers Web Plus enhances user experience for Pokémon TCG Asia website.",
     version: pkg.version,
     permissions: ["storage"],
     host_permissions: ["*://asia.pokemon-card.com/*"],
