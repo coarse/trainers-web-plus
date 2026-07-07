@@ -15,6 +15,7 @@ stats-*.json
 .wxt
 build
 web-ext.config.ts
+*.csv
 
 # Editor directories and files
 .vscode/*
