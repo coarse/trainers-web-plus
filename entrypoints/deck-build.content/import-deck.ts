@@ -8,6 +8,7 @@ import {
   container,
   importButton,
 } from "./elements";
+import { showToast } from "@/shared/toast";
 
 closeButton.addEventListener("click", () => {
   modal.style.display = "none";
@@ -63,6 +64,8 @@ async function handleSubmit() {
     console.error("Errors:", success.errors);
     return;
   }
+
+  showToast(`Import success! Redirecting to decklist page...`);
 
   modal.style.display = "none";
   document.body.classList.remove("modalOpening");
