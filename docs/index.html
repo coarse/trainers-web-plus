@@ -22,29 +22,88 @@
         font-size: 2rem;
         margin-bottom: 0.5rem;
       }
-      p {
+      .tagline {
         color: #94a3b8;
-        max-width: 400px;
+        max-width: 420px;
+        margin: 0 auto 2rem;
       }
-      a {
-        color: #94a3b8;
+      .buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 2.5rem;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.65rem 1.25rem;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: opacity 0.15s;
+        min-width: 260px;
+        justify-content: center;
+      }
+      .btn:hover {
+        opacity: 0.85;
+      }
+      .btn-firefox {
+        background: #ff7139;
+        color: #fff;
+      }
+      .btn-chrome {
+        background: #f8fafc;
+        color: #0f172a;
+      }
+      .btn-chrome .badge {
+        font-size: 0.75rem;
+        background: #e2e8f0;
+        color: #475569;
+        border-radius: 4px;
+        padding: 0.1rem 0.4rem;
+      }
+      .links {
+        display: flex;
+        gap: 1.5rem;
         font-size: 0.85rem;
-        margin-top: 2rem;
-        display: inline-block;
       }
-      a:hover {
-        color: #f8fafc;
+      .links a {
+        color: #64748b;
+        text-decoration: none;
+      }
+      .links a:hover {
+        color: #94a3b8;
       }
     </style>
   </head>
   <body>
     <h1>Trainers Web Plus</h1>
-    <p>
+    <p class="tagline">
       A browser extension that enhances the Pokémon TCG Asia website for
       registered players.
     </p>
-    <p>Coming soon to the Chrome Web Store and Firefox Add-ons.</p>
-    <a href="/trainers-web-plus/privacy-policy.html">Privacy Policy</a>
-    <a href="/trainers-web-plus/support.html">Support</a>
+
+    <div class="buttons">
+      <a
+        class="btn btn-firefox"
+        href="https://addons.mozilla.org/en-US/firefox/addon/trainers-web-plus/"
+        target="_blank"
+        rel="noopener"
+      >
+        🦊 Add to Firefox
+      </a>
+      <a class="btn btn-chrome" href="#" aria-disabled="true">
+        Add to Chrome
+        <span class="badge">Coming Soon</span>
+      </a>
+    </div>
+
+    <div class="links">
+      <a href="/trainers-web-plus/support.html">Support</a>
+      <a href="/trainers-web-plus/privacy-policy.html">Privacy Policy</a>
+    </div>
   </body>
 </html>
