@@ -2,6 +2,7 @@ import { getCountryCode } from "@/shared/url";
 import { showToast } from "@/shared/toast";
 import { injectEnterSearch } from "./enter-search";
 import { injectImportDeck } from "./import-deck";
+import "@/assets/deck-build.content.css";
 import "@/assets/toast.content.css";
 
 export default defineContentScript({
@@ -20,6 +21,6 @@ export default defineContentScript({
 
     injectImportDeck();
     injectEnterSearch();
-    showToast(`Extra features enabled!`);
+    showToast(`Extra features have been enabled.`);
   },
 });

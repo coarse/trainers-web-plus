@@ -7,8 +7,11 @@ import {
   bottomCloseButton,
   container,
   importButton,
+  errors,
 } from "./elements";
 import { showToast } from "@/shared/toast";
+
+const CARD_COUNT_ERROR = "Deck does not have 60 cards.";
 
 closeButton.addEventListener("click", () => {
   modal.style.display = "none";
@@ -27,6 +30,20 @@ importButton.addEventListener("click", () => {
   document.body.classList.add("modalOpening");
 });
 
+export function showErrors(messages: string[]) {
+  messages.forEach((message) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = message;
+    errors.appendChild(listItem);
+  });
+  errors.style.display = "block";
+}
+
+export function hideErrors() {
+  errors.replaceChildren();
+  errors.style.display = "none";
+}
+
 function serializeData(
   deckData: { cardId: string; cardName: string; count: string }[],
 ): URLSearchParams {
@@ -40,14 +57,29 @@ function serializeData(
 }
 
 async function handleSubmit() {
+  hideErrors();
   const decklistValue = decklist.value.trim();
   if (!decklistValue) {
     alert("Please paste your decklist.");
     return;
   }
 
-  const deckData = getDeckDataFromText(decklistValue);
+  const { deckData, cardCount, missingCards } =
+    getDeckDataFromText(decklistValue);
   console.log("Decklist imported:", deckData);
+
+  const errorMessages = [];
+  if (cardCount < 60) {
+    errorMessages.push(CARD_COUNT_ERROR);
+  }
+  missingCards.forEach((card) => {
+    errorMessages.push(`Card not found: ${card}`);
+  });
+  if (errorMessages) {
+    showErrors(errorMessages);
+    showToast("Uh-oh, the decklist seems to be invalid.");
+    return;
+  }
 
   const validateUrl = (
     document.querySelector("#getDeckCodeButton") as HTMLElement

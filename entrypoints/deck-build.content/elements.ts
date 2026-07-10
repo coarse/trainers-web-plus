@@ -21,9 +21,17 @@ modalBody.className = "modalBody";
 export const decklist = document.createElement("textarea");
 decklist.id = "decklist";
 decklist.placeholder = "Paste your TCG Live decklist here";
-decklist.style.marginBottom = "16px";
 decklist.rows = 10;
 decklist.cols = 50;
+
+export const notes = document.createElement("p");
+notes.className = "notes";
+notes.textContent =
+  "Note: Expanded format decks are not supported at the moment.";
+
+export const errors = document.createElement("ul");
+errors.className = "errors";
+errors.style.display = "none";
 
 export const submitButton = document.createElement("button");
 submitButton.className = "button";
@@ -45,14 +53,15 @@ importButton.textContent = "Import Deck";
 
 topClose.appendChild(closeButton);
 
-modalBody.appendChild(decklist);
-modalBody.appendChild(submitButton);
+[decklist, errors, notes, submitButton].forEach((el) =>
+  modalBody.appendChild(el),
+);
 
 bottomClose.appendChild(bottomCloseButton);
 
-modalWindow.appendChild(topClose);
-modalWindow.appendChild(modalBody);
-modalWindow.appendChild(bottomClose);
+[topClose, modalBody, bottomClose].forEach((el) => {
+  modalWindow.appendChild(el);
+});
 
 modalWrapper.appendChild(modalWindow);
 modal.appendChild(modalWrapper);

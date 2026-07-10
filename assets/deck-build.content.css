@@ -1,0 +1,19 @@
+#importDeckModal .notes,
+#importDeckModal textarea {
+  margin-bottom: 16px;
+}
+
+#importDeckModal .notes {
+  font-size: 12px;
+}
+
+#importDeckModal .errors {
+  background-color: #fceae5;
+  width: 100%;
+  max-width: 420px;
+  margin-bottom: 16px;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 23px;
+}
