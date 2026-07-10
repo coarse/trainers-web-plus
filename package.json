@@ -2,7 +2,7 @@
   "name": "trainers-web-plus",
   "description": "Trainers Web Plus Browser Extension",
   "license": "MIT",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "type": "module",
   "scripts": {
     "dev": "wxt",

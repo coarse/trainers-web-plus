@@ -21,10 +21,9 @@ A browser extension built with **WXT**, **React**, **TypeScript**, and **Vite** 
    - At a glance, see how many events you've registered to, how many events you've been elected, and how many you've been declined
    - Easily search through events by using the built-in filters for registration status or event details
 
-5. **Deck Builder Improvments** *(Coming Soon)*
-   - Still a work in progress!
+5. **Deck Builder Improvments**
    - Enables pressing `Enter` to search for cards
-   - Looking into feasibility of adding an import from TCG Live tool
+   - Import decklists from TCG Live or Limitless directly
 
 ---
 
