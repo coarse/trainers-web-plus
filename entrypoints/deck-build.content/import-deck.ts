@@ -75,7 +75,7 @@ async function handleSubmit() {
   missingCards.forEach((card) => {
     errorMessages.push(`Card not found: ${card}`);
   });
-  if (errorMessages) {
+  if (errorMessages.length > 0) {
     showErrors(errorMessages);
     showToast("Uh-oh, the decklist seems to be invalid.");
     return;
@@ -94,6 +94,7 @@ async function handleSubmit() {
 
   if (success.errors.length > 0) {
     console.error("Errors:", success.errors);
+    showToast("Uh-oh, something went wrong while validating your decklist.");
     return;
   }
 
