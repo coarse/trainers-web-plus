@@ -42,8 +42,8 @@ def fetch_cards(form_product: str, form_product_ids: str) -> tuple[list[dict], s
     return cards, response.text
 
 if __name__ == "__main__":
-    product = "SV05"
-    cards, raw = fetch_cards(form_product=product, form_product_ids="checkbox44")
+    product = "30th"
+    cards, raw = fetch_cards(form_product=product, form_product_ids="checkbox47")
 
     with open(f"{product}.csv", "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=["card_id", "card_name", "img_src"])

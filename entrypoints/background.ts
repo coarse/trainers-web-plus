@@ -1,8 +1,6 @@
 import { PublicPath } from "wxt/browser";
 
 export default defineBackground(() => {
-  console.log("Hello background!", { id: browser.runtime.id });
-
   const ICONS_DEFAULT: Record<number, PublicPath> = {
     16: "/icon/16.png",
     32: "/icon/32.png",

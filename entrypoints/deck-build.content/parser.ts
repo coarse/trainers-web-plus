@@ -6,7 +6,7 @@ declare global {
   }
 }
 
-const cardRegex = /^(\d+)\s+.+?\s+([A-Z]+)\s+(\d+)$/;
+const cardRegex = /^(\d+)\s+.+?\s+([A-Z]+|30C)\s+(\d+)$/;
 const mapping = cards as Record<string, Record<string, number>>;
 const cardLookup = new Map(
   (window.cardList || []).map((c) => [c.cardId, c.cardName]),
